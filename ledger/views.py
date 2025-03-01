@@ -16,4 +16,4 @@ def list(request):
             "task 4"
         ]
     }
-    return render(request, 'base.html',ctx)
+    return render(request, 'recipelist.html',ctx)
