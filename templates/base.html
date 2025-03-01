@@ -1,7 +1,8 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>{% block title %}Ledger{% endblock %}</title>
     {% block styles %}{% endblock %}
     <h1>Recipe Book</h1>
