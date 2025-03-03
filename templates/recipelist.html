@@ -2,9 +2,9 @@
 {% load static %}
 {% block title %}Recipe List{% endblock %}
 {% block content %}
-    <table>
+    <ol>
         {% for recipe in recipes %}
-        <tr>{{ recipe }}</tr>
+        <li>{{ recipe.name }}</li>
         {% endfor %}
-    </table>
+    </ol>
 {% endblock %}
