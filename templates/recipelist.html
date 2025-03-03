@@ -4,8 +4,10 @@
 {% block content %}
     <ol>
         {% for recipe in recipes %}
-        <li href="{recipe.link}">
-            {{ recipe.name }}
+        <li>
+            <a href="{recipe.link}">
+                {{ recipe.name }}
+            </a>
         </li>
         {% endfor %}
     </ol>
