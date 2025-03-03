@@ -2,16 +2,23 @@
 {% load static %}
 {% block title %}Recipe List{% endblock %}
 {% block content %}
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Quantity</th>
-        </tr>
-        {% for ingredient in recipe %}
-        <tr>
-            <td>{{ingredient.name}}</td>
-            <td>{{ingredient.quantity}}</td>
-        </tr>
+    <ol>
+        {% for recipe in recipes %}
+        <li>
+            {{ recipe.name }}
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Quantity</th>
+                </tr>
+                {% for ingredient in recipe.ingredients %}
+                <tr>
+                    <td>{{ingredient.name}}</td>
+                    <td>{{ingredient.quantity}}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        </li>
         {% endfor %}
-    </table>
+    </ol>
 {% endblock %}
