@@ -7,7 +7,6 @@ def index(request):
     return HttpResponse('Hello World! This came from the index view')
 
 def list(request):
-    # return HttpResponse('This is from /recipes/list')
     ctx = {
         "recipes": [
             {
@@ -75,32 +74,30 @@ def list(request):
     return render(request, 'recipelist.html',ctx)
 
 def recipe1(request):
-    return HttpResponse('This is from /recipe/1')
-
-    # ctx = {
-    #     "name": "Recipe 1",
-    #     "ingredients": [
-    #         {
-    #             "name": "tomato",
-    #             "quantity": "3pcs"
-    #         },
-    #         {
-    #             "name": "onion",
-    #             "quantity": "1pc"
-    #         },
-    #         {
-    #             "name": "pork",
-    #             "quantity": "1kg"
-    #         },
-    #         {
-    #             "name": "water",
-    #             "quantity": "1L"
-    #         },
-    #         {
-    #             "name": "sinigang mix",
-    #             "quantity": "1 packet"
-    #         }
-    #     ],
-    #     "link": "/recipe/1"
-    # }
-    # return render(request, 'recipe1.html',ctx)
+    ctx = {
+        "name": "Recipe 1",
+        "ingredients": [
+            {
+                "name": "tomato",
+                "quantity": "3pcs"
+            },
+            {
+                "name": "onion",
+                "quantity": "1pc"
+            },
+            {
+                "name": "pork",
+                "quantity": "1kg"
+            },
+            {
+                "name": "water",
+                "quantity": "1L"
+            },
+            {
+                "name": "sinigang mix",
+                "quantity": "1 packet"
+            }
+        ],
+        "link": "/recipe/1"
+    }
+    return render(request, 'recipe1.html',ctx)
