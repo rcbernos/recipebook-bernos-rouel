@@ -100,4 +100,4 @@ def recipe1(request):
         ],
         "link": "/recipe/1"
     }
-    return render(request, 'recipe1.html',ctx)
+    return render(request, 'recipe.html',ctx)
