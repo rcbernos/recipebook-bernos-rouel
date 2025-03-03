@@ -13,9 +13,10 @@
                 </tr>
                 {% for ingredient in recipe.ingredients %}
                 <tr>
-                    <td>recipe.ingredients.name</td>
-                    <td>recipe.ingredients.quantity</td>
+                    <td>{{ingredient.name}}</td>
+                    <td>{{ingredient.quantity}}</td>
                 </tr>
+                {% endfor %}
             </table>
         </li>
         {% endfor %}
