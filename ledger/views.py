@@ -7,6 +7,7 @@ def index(request):
     return HttpResponse('Hello World! This came from the index view')
 
 def list(request):
+    # return HttpResponse('This is from /recipes/list')
     ctx = {
         "recipes": [
             {
