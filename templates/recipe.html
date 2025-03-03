@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Recipe List{% endblock %}
+{% block content %}
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+        </tr>
+        {% for ingredient in ingredients %}
+        <tr>
+            <td>{{ingredient.name}}</td>
+            <td>{{ingredient.quantity}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
