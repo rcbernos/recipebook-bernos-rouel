@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Ingredient, Recipe, RecipeIngredient
-
+#test
 class IngredientAdmin(admin.ModelAdmin):
     model = Ingredient
 
