@@ -6,14 +6,14 @@ from django.urls import reverse
 class Ingredient(models.Model):
     name = models.CharField(max_length=101)
     def __str__(self):
-        return '{}'.format(self.name)
+        return self.name
     def get_absolute_url(self):
         return reverse('ingredient_detail', args=[str(self.name)])
 
 class Recipe(models.Model):
     name = models.CharField(max_length=101)
     def __str__(self):
-        return '{}'.format(self.name)
+        return self.name
     def get_absolute_url(self):
         return reverse('recipe_detail', args=[str(self.name)])
 
