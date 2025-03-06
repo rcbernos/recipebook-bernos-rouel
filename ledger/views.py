@@ -1,5 +1,7 @@
 from django.shortcuts import render
-from .models import Ingredient
+from django.views.generic.list import ListView
+from django.views.generic.detail import DetailView
+from .models import Recipe
 from django.http import HttpResponse
 
 def index(request):
@@ -102,11 +104,11 @@ def recipe1(request):
     }
     return render(request, 'recipe.html',ctx)
 
-def recipe2(request):
-    ingredients = Ingredient.objects.all()
-    ctx = {
-        "ingredients": ingredients,
-        "link": "/recipe/2"
+# def recipe2(request):
+#     ingredients = Ingredient.objects.all()
+#     ctx = {
+#         "ingredients": ingredients,
+#         "link": "/recipe/2"
 
-    }
-    return render(request, 'recipe.html',ctx)
+#     }
+#     return render(request, 'recipe.html',ctx)
