@@ -2,10 +2,6 @@ from django.shortcuts import render
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import Recipe
-from django.http import HttpResponse
-
-def index(request):
-    return HttpResponse('Hello World! This came from the index view')
 
 def list(request):
     # return HttpResponse('This is from /recipes/list')
