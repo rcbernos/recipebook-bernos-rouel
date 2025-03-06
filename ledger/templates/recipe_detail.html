@@ -7,11 +7,9 @@
             <th>Name</th>
             <th>Quantity</th>
         </tr>
-            {% for ingredient in <recipe instance>.ingredients.all %}
-                {{ ingredient.ingredient.name }}
-            {% endfor %}
+        {% for ingredient in recipe.ingredients.all %}
         <tr>
-            <td>{{ingredient.name}}</td>
+            <td>{{ingredient.ingredient.name}}</td>
             <td>{{ingredient.quantity}}</td>
         </tr>
         {% endfor %}
