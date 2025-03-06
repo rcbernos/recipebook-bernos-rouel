@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Ingredient
 from django.http import HttpResponse
 
 def index(request):
@@ -103,38 +103,10 @@ def recipe1(request):
     return render(request, 'recipe.html',ctx)
 
 def recipe2(request):
+    ingredients = Ingredient.objects.all()
     ctx = {
-        "name": "Recipe 2",
-        "ingredients": [
-            {
-                "name": "garlic",
-                "quantity": "1 head"
-            },
-            {
-                "name": "onion",
-                "quantity": "1pc"
-            },
-            {
-                "name": "vinegar",
-                "quantity": "1/2cup"
-            },
-            {
-                "name": "water",
-                "quantity": "1 cup"
-            },
-            {
-                "name": "salt",
-                "quantity": "1 tablespoon"
-            },
-            {
-                "name": "whole black peppers",
-                "quantity": "1 tablespoon"
-            },
-            {
-                "name": "pork",
-                "quantity": "1 kilo"
-            }
-        ],
+        "ingredients": ingredients,
         "link": "/recipe/2"
+
     }
     return render(request, 'recipe.html',ctx)
