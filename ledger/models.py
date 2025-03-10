@@ -4,6 +4,9 @@ from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+    short_bio = models.TextField(min_length=256)
+
 
 class Ingredient(models.Model):
     name = models.CharField(max_length=101)
