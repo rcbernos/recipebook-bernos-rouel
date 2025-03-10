@@ -1,11 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import User
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=50)
-    short_bio = models.TextField(min_length=256)
+    short_bio = models.TextField(validators=[MinLengthValidator(50, 'the field must contain at least 50 characters')])
 
 
 class Ingredient(models.Model):
@@ -20,7 +21,7 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=101)
-    author = models.models.TextField()
+    author = models.CharField(max_length=101)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
 
