@@ -20,6 +20,7 @@ class Ingredient(models.Model):
 
 class Recipe(models.Model):
     name = models.CharField(max_length=101)
+    author = models.models.TextField()
 
     def __str__(self):
         return self.name
