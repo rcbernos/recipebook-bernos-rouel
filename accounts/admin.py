@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Profile
 
-class ProfileAdmin():
+class ProfileAdmin(admin.ModelAdmin):
     model = Profile
 
 
