@@ -33,7 +33,7 @@ class RecipeIngredient(models.Model):
         Recipe, on_delete=models.CASCADE, related_name='ingredients')
 
 class RecipeImage(models.Model):
-    image = models.models.ImageField((""), upload_to=None, height_field=None, width_field=None, max_length=None)
+    image = models.ImageField((""), upload_to='images/', null=False)
     description = models.CharField(max_length=255)
     recipe = models.ForeignKey(
         Recipe, on_delete=models.CASCADE, related_name='ingredients')
