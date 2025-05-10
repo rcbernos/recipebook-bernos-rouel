@@ -14,3 +14,13 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     model = Recipe
     template_name = "recipe_detail.html"
     redirect_field_name = 'recipes/list'
+
+class RecipeAddView(LoginRequiredMixin, DetailView):
+    model = Recipe
+    template_name = "recipe_add.html"
+    redirect_field_name = 'recipe/add'
+    
+class ImageAddView(LoginRequiredMixin, DetailView):
+    model = Recipe
+    template_name = "image_add.html"
+    redirect_field_name = 'recipe/pk/add_image'
