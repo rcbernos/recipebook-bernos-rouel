@@ -16,6 +16,7 @@ class IngredientAdmin(admin.ModelAdmin):
 
 class RecipeAdmin(admin.ModelAdmin):
     model = Recipe
+    inlines = [RecipeIngredientInline, RecipeImageInline]
 
 
 class RecipeIngredientAdmin(admin.ModelAdmin):
