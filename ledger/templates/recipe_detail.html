@@ -4,9 +4,10 @@
 {% block content %}  
     <h2>{{recipe.name}}</h2>
     <h3>by {{recipe.author}}</h3>
+    <h1>{{recipe.recipeimage.description}}</h1>
     <h4>Image of the Recipe:</h4>
-    <img src="/media/images/egg.jpg" alt="egg">
-    <table>
+    <img src="{{recipe.recipeimage.last.image.url}}" alt="{{recipe.recipeimage.last.description}}">
+        <table>
         <tr>
             <th>Name</th>
             <th>Quantity</th>
