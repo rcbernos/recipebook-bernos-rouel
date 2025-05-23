@@ -45,7 +45,7 @@ def ImageAddView(request, pk):
             image = image_form.save(commit=False)
             image.recipe = recipe 
             image.save()
-            return redirect('/recipes/list', pk=image.recipe.pk)
+            return redirect('/recipe/' + str(pk))
     ctx = {
         "image_form": image_form,
     }
