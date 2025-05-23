@@ -3,7 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from .models import Recipe
-from .forms import RecipeCreateForm
+from .forms import RecipeCreateForm, ImageAddForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 
@@ -32,8 +32,21 @@ def RecipeAddView(request):
     }
     return render(request, 'recipe_add.html', ctx)
 
-    
-class ImageAddView(LoginRequiredMixin, DetailView):
-    model = Recipe
-    template_name = "image_add.html"
-    redirect_field_name = 'recipe/pk/add_image'
+@login_required 
+def ImageAddView(request, pk):
+    print("loaded view")
+    print(pk)
+    recipe = Recipe.objects.get(id=pk)
+    print(recipe.name)
+    image_form = ImageAddForm()
+    if request.method == 'POST':
+        image_form = ImageAddForm(request.POST, request.FILES)
+        if image_form.is_valid():
+            image = image_form.save(commit=False)
+            image.recipe = recipe 
+            image.save()
+            return redirect('/recipes/list', pk=image.recipe.pk)
+    ctx = {
+        "image_form": image_form,
+    }
+    return render(request, 'image_add.html', ctx)

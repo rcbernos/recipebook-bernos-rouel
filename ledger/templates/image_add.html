@@ -3,5 +3,10 @@
 {% block title %}Recipe List{% endblock %}
 {% block content %}
     <h2>Add the Image</h2>
-
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <h2>Create a Recipe: </h2>
+            {{ image_form.as_p }}Test
+            <button type="submit" value="submit">Submit</button>
+        </form>
 {% endblock %}
