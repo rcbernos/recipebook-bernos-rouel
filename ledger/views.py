@@ -17,6 +17,7 @@ class RecipeDetailView(LoginRequiredMixin, DetailView):
     template_name = "recipe_detail.html"
     redirect_field_name = 'recipes/list'
 
+
 @login_required
 def RecipeAddView(request):
     recipe_form = RecipeCreateForm()
@@ -32,7 +33,8 @@ def RecipeAddView(request):
     }
     return render(request, 'recipe_add.html', ctx)
 
-@login_required 
+
+@login_required
 def ImageAddView(request, pk):
     print("loaded view")
     print(pk)
@@ -43,7 +45,7 @@ def ImageAddView(request, pk):
         image_form = ImageAddForm(request.POST, request.FILES)
         if image_form.is_valid():
             image = image_form.save(commit=False)
-            image.recipe = recipe 
+            image.recipe = recipe
             image.save()
             return redirect('/recipe/' + str(pk))
     ctx = {

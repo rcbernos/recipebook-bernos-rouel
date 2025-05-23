@@ -11,9 +11,10 @@ class RecipeCreateForm(forms.ModelForm):
         model = Recipe
         fields = ['name']
 
+
 class ImageAddForm(forms.ModelForm):
     """Create a form to Create a Recipe."""
 
     class Meta:
         model = RecipeImage
-        fields = ['image','description']
+        fields = ['image', 'description']
