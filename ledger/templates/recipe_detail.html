@@ -8,7 +8,7 @@
         {{recipe.author}}
     {% if user.profile.name|stringformat:"s" == recipe.author|stringformat:"s" %}
     test
-        <a href="{% url 'ledger:recipe-detail' recipe.pk %}">Add Picture</a>
+        <a href="{% url 'ledger:image-add' recipe.pk %}">Add Picture</a>
     {% endif %}
     <h4>Image of the Recipe:</h4>
     <img src="{{recipe.recipeimage.last.image.url}}" alt="{{recipe.recipeimage.last.description}}">
